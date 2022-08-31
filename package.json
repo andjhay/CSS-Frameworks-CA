@@ -1,0 +1,28 @@
+{
+  "name": "css-frameworks-ca",
+  "version": "1.0.0",
+  "description": "cat-blog",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andjhay/CSS-Frameworks-CA.git"
+  },
+  "keywords": [
+    "blog",
+    "cats"
+  ],
+  "author": "Andrew Hay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andjhay/CSS-Frameworks-CA/issues"
+  },
+  "homepage": "https://github.com/andjhay/CSS-Frameworks-CA#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.54.7"
+  }
+}
