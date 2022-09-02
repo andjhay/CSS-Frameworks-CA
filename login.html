@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="dist/css/style.css" />
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <body class="text-center">
+
+  <body>
     <h1 class="text-center">City Cats</h1>
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
@@ -17,15 +18,16 @@
         <li class="nav-item"><a href="login.html" class="nav-link active" aria-current="page">Login</a></li>
       </ul>
     </header>
+
     <main class="form-signin w-100 m-auto">
-      <form>
-        <h1 class="h3 mb-3 fw-normal">Login</h1>
+      <form action="profile.html">
+        <h1 class="mb-3 fw-normal">Login</h1>
         <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required />
           <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required />
           <label for="floatingPassword">Password</label>
         </div>
 
@@ -35,5 +37,16 @@
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
       </form>
     </main>
+
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      </ul>
+      <p class="text-center text-muted">© 2022 City Cats</p>
+    </footer>
   </body>
 </html>
