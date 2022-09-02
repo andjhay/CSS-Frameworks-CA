@@ -1,12 +1,46 @@
 @charset "UTF-8";
-/*  
-$border-radius:           0; 
+/* $border-radius:           0; 
 $border-radius-sm:        0;   
 $border-radius-lg:        0;  
 $border-radius-xl:        0; 
 $border-radius-2xl:       0; 
-$border-radius-pill:      0;   
-*/
+$border-radius-pill:      0;  */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type=email] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type=password] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-new-post {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-new-post .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-new-post input, .form-new-post textarea {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

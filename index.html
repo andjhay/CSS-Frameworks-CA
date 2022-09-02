@@ -5,19 +5,133 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/CSS-Frameworks-CA/dist/css/style.css" />
-    <script src="/CSS-Frameworks-CA/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="dist/css/style.css" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </head>
+
   <body>
+
+    <h1 class="text-center">City Cats</h1>
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+        <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
       </ul>
     </header>
-    <h1>Hello</h1>
+    
+    <main>
+    <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom">Newsfeed</h2>
+      <form role="search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+      </form>
+
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col">
+          <a href="post.html" style="text-decoration: none;">
+            <div
+              class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+              style="background-image: url('img/cat1.jpg'); background-size: cover;"
+            >
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Buttercup looks grumpy</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="d-flex align-items-center me-3">
+                    <p>Earth</p>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <p>3d</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="post.html" style="text-decoration: none;">
+            <div
+              class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+              style="background-image: url('img/cat3.jpg'); background-size: cover;"
+            >
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Sat in the neighbors garden</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="d-flex align-items-center me-3">
+                    <p>Down the street</p>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <p>4d</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="post.html" style="text-decoration: none;">
+          <div
+            class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            style="background-image: url('img/cat2.jpg'); background-size: cover;"
+          >
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+              <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">First trip to the vet</h2>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="d-flex align-items-center me-3">
+                  <p>California</p>
+                </li>
+                <li class="d-flex align-items-center">
+                  <p>5d</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      </div>
+    </div>
+
+    <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom">New Post</h2>
+      <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
+
+        <div class="form-new-post w-100 m-auto">
+        <form action="newpost">
+
+          <div class="form-floating">
+            <input type="text" class="form-control" id="title" placeholder="Title" required/>
+            <label for="title">Title (required)</label>
+          </div>
+
+          <div class="form-floating">
+            <label for="image">Image</label>
+            <input type="submit" class="form-control" id="image" value="Upload"/>
+          </div>
+
+          <div class="form-floating">
+            <textarea type="text" class="form-control" id="text" placeholder="Text" required></textarea>
+            <label for="text">Text (required) </label>
+          </div>
+
+          <button class="w-100 btn btn-lg btn-primary">Post</button>
+        </form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+    <footer>
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      </ul>
+      <p class="text-center text-muted">© 2022 City Cats</p>
+    </footer>
   </body>
 </html>
