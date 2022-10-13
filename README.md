@@ -2,7 +2,7 @@
 
 https://trello.com/b/qfj94TKl/javascript-2
 
-Hi Martin, Apologies i am a bit behind and have not fully completed all the CA requirements yet.
+I am a bit behind and have not fully completed all the CA requirements yet.
 
 Progress:
 Register
