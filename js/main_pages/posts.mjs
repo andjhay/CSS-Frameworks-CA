@@ -22,6 +22,12 @@ export async function singlePostFetch(postId) {
   selectDeleteButtons();
 }
 
+export function displayUserPosts(user) {
+  user.posts.forEach((post) => {
+    singlePostFetch(post.id);
+  });
+}
+
 export async function selectDeleteButtons() {
   const deleteButton = document.querySelectorAll("#deleteButton");
 
@@ -32,7 +38,6 @@ export async function selectDeleteButtons() {
   function deletePost() {
     let postId = this.dataset.id;
     removePost(postId);
-    alert(`Post ${postId} Deleted`);
     location.reload();
   }
 }

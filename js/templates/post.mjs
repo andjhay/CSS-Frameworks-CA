@@ -14,7 +14,7 @@ export function postTemplateUser(postData) {
   post.innerHTML = `<div class="col"> <img src="${postData.media}" height="100"> </div> 
   <div class="col"> <h2>${postData.title}</h2> <h5>${postData.created}</h5> <p>${postData.body}</p> </div> 
   <div class="row m-auto">
-  <button id="deleteButton" data-id="${postData.id}" class="btn btn-primary col m-2"> Delete </button> <button class="btn btn-secondary col m-2"> Edit </button> 
+  <button id="deleteButton" data-id="${postData.id}" class="btn btn-primary col m-2"> Delete </button> <a class="col" href="edit.html?id=${postData.id}"> <button class="btn btn-secondary w-100 m-2"> Edit </button></a>
   </div>
   `;
   return post;
