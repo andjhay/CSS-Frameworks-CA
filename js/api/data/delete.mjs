@@ -5,6 +5,10 @@ const action = "/posts";
 const method = "delete";
 
 export async function removePost(id) {
+  if (!id) {
+    throw new Error("Delete Post requires ID");
+  }
+
   const deletePostURL = `${apiPath}${action}/${id}`;
 
   const response = await authFetch(deletePostURL, {

@@ -2,6 +2,7 @@ import { setRegisterFormListener } from "../handlers/register.mjs";
 import { setLoginFormListener } from "../handlers/login.mjs";
 import { checkLoggedIn } from "../handlers/checkLoggedIn.mjs";
 import { logOut } from "../handlers/logout.mjs";
+import { multiPostFetch } from "./posts.mjs";
 
 const path = location.pathname;
 
@@ -12,5 +13,7 @@ if (path === "/CSS-Frameworks-CA/html/login.html") {
 } else {
   checkLoggedIn();
 }
+
+multiPostFetch();
 
 logOut();

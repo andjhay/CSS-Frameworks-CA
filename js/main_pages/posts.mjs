@@ -1,4 +1,5 @@
 import { apiPath } from "../api/api.mjs";
+import { removePost } from "../api/data/delete.mjs";
 import { fetchAllData, fetchData } from "../api/data/fetch.mjs";
 import { renderPostTemplates, renderPostTemplate } from "../templates/post.mjs";
 
@@ -18,6 +19,20 @@ export async function singlePostFetch(postId) {
   if (container) {
     renderPostTemplate(post, container);
   }
+  selectDeleteButtons();
 }
 
-multiPostFetch();
+export async function selectDeleteButtons() {
+  const deleteButton = document.querySelectorAll("#deleteButton");
+
+  deleteButton.forEach((button) => {
+    button.addEventListener("click", deletePost);
+  });
+
+  function deletePost() {
+    let postId = this.dataset.id;
+    removePost(postId);
+    alert(`Post ${postId} Deleted`);
+    location.reload();
+  }
+}

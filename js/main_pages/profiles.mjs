@@ -7,13 +7,12 @@ import { singlePostFetch } from "./posts.mjs";
 
 const displayName = document.querySelector("#userName");
 const profilePicture = document.querySelector("#profilePicture");
-const usersPosts = document.querySelector("#userPosts");
 
 const apiProfiles = "/profiles/";
 const currentUser = `${storage.load("user").name}?_posts=true&_following=true&_followers=true`;
 
-async function UserProfile() {
-  const userProfile = await fetchData(apiPath, apiProfiles, currentUser);
+function UserProfile() {
+  const userProfile = fetchData(apiPath, apiProfiles, currentUser);
   return userProfile;
 }
 
@@ -32,10 +31,6 @@ function displayUserPosts(user) {
   });
 }
 
-const deleteButton = document.querySelectorAll("#deleteButton");
-
-
+displayUserPosts(user);
 
 setCreatePostListener();
-
-displayUserPosts(user);
