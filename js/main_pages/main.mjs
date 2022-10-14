@@ -6,9 +6,9 @@ import { multiPostFetch } from "./posts.mjs";
 
 const path = location.pathname;
 
-if (path === "/CSS-Frameworks-CA/html/login.html") {
+if (path === "/html/login.html") {
   setLoginFormListener();
-} else if (path === "/CSS-Frameworks-CA/html/register.html") {
+} else if (path === "/html/register.html") {
   setRegisterFormListener();
 } else {
   checkLoggedIn();
@@ -17,3 +17,16 @@ if (path === "/CSS-Frameworks-CA/html/login.html") {
 multiPostFetch();
 
 logOut();
+
+// const sortOldToNew = document.querySelectorAll("#SortOld");
+// const sortNew = document.querySelectorAll("#SortNew");
+// const sortFriends = document.querySelectorAll("#sortFriends");
+// const sortAll = document.querySelectorAll("#sortAll");
+
+// function initiateFiltering() {
+//   sortOldToNew.addEventListener("click", (event) => {
+//     event.console.log("test");
+//   });
+// }
+
+// initiateFiltering();

@@ -1,7 +1,7 @@
 import { authFetch } from "../authFetch.mjs";
 
 export async function fetchAllData(baseURL, dataURL) {
-  const fetchAllDataURL = `${baseURL}${dataURL}`;
+  const fetchAllDataURL = `${baseURL}${dataURL}?_author=true&_comments=true&_reactions=true`;
 
   const response = await authFetch(fetchAllDataURL);
 

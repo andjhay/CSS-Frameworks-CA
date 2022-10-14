@@ -1,6 +1,5 @@
 import { apiPath } from "../api/api.mjs";
-import { removePost } from "../api/data/delete.mjs";
-import { fetchAllData, fetchData } from "../api/data/fetch.mjs";
+import { fetchData } from "../api/data/fetch.mjs";
 import { setCreatePostListener } from "../handlers/createPost.mjs";
 import * as storage from "../handlers/storage.mjs";
 import { displayUserPosts } from "./posts.mjs";
@@ -24,6 +23,18 @@ if (String(user.media) === String(undefined)) {
 } else {
   profilePicture.src = user.media;
 }
+
+// function editProfile() {
+//   const avatarButton = document.querySelectorAll("#avatarButton");
+
+//   avatarButton.addEventListener("click", updateAvatar);
+
+//   function updateAvatar() {
+
+//     updatePost(postId);
+//     location.reload();
+//   }
+// }
 
 displayUserPosts(user);
 
