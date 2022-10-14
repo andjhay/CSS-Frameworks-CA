@@ -4,11 +4,12 @@ import { checkLoggedIn } from "../handlers/checkLoggedIn.mjs";
 import { logOut } from "../handlers/logout.mjs";
 import { multiPostFetch } from "./posts.mjs";
 
-const path = location.pathname;
+const pathOriginal = location.pathname;
 
-if (path === "/html/login.html") {
+const path = pathOriginal.slice(pathOriginal.lastIndexOf("/") + 1);
+if (path === "login.html") {
   setLoginFormListener();
-} else if (path === "/html/register.html") {
+} else if (path === "register.html") {
   setRegisterFormListener();
 } else {
   checkLoggedIn();
