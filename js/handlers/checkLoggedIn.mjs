@@ -1,3 +1,4 @@
+import { multiPostFetch } from "../main_pages/posts.mjs";
 import { loggedInTemplate, loginTemplate } from "../templates/login.mjs";
 import { load } from "./storage.mjs";
 
@@ -14,5 +15,11 @@ export function checkLoggedIn() {
     loginTemplate(mainContainer, currentUser, logIn, logOut);
   } else {
     loggedInTemplate(currentUser, logIn, logOut);
+    const pathOriginal = location.pathname;
+
+    const path = pathOriginal.slice(pathOriginal.lastIndexOf("/") + 1);
+    if (path === "index.html") {
+      multiPostFetch();
+    }
   }
 }

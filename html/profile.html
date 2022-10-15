@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Social Noroff - Buttercup</title>
+    <title>Social Noroff</title>
     <link rel="stylesheet" href="../dist/css/style.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/main_pages/main.mjs" defer type="module"></script>
@@ -29,15 +29,15 @@
         <h2 id="userName" class="pb-2 border-bottom">Profile: </h2>
         <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
           
-          <div id="profilePicture" class="col">
-            <img  src="" alt="" width="200" height="200">
+          <div id="profilePictureDiv" class="col">
+            <img id="profilePicture" src="" alt="" width="200" height="200">
           </div>
 
           <div class="col">
             <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg">
               <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                 <p>
-                  <ul>Details
+                  <ul>Profile Details
                     <li>About</li>
                     <li>Likes</li>
                     <li>Dislikes</li>
@@ -61,7 +61,7 @@
 
       <div class="container px-4 py-5 mb-5" id="custom-cards">
         <h2 class="pb-2 border-bottom">New Post</h2>
-        <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
+        <div class="row row-cols-1 row-cols-lg-2 align-items-stretch py-5">
 
           <div class="form w-50 m-auto">
           <form id="postForm">

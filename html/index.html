@@ -23,24 +23,27 @@
       </div>
     </header>
 
-    <main class="text-center">
+    <main class="text-center mb-5 pb-5">
       <div class="justify-content-center m-2">
-        <h2 class="m-2 border-bottom">Postfeed</h2>
+        <h2 class="m-3 border-bottom">Postfeed</h2>
       </div>
       <div class="justify-content-center m-auto w-50">
-        <form role="search" class="m-3">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+        <form id="search" class="m-3">
+          <input class="form-control" type="search" name="search" placeholder="Search" />
+          <button type="submit" id="search" class="m-2">search</button>
         </form>
       </div>
-      <div class="row w-50 m-auto">
-        <div class="col m-2">
+      <div class="w-50 m-auto">
+        <div class="m-2">
           <button id="sortNew" class="m-2">Newest</button><button id="sortOld" class="m-2">Oldest</button>
-        </div>
-        <div class="col m-2">
-          <button id="sortFriends" class="m-2">Only Friends</button><button id="sortAll" class="m-2">All Posts</button>
         </div>
       </div>
       <div id="posts" class="container"></div>
+      <div class="row mb-5 p-3 w-50 m-auto">
+        <button id="previousPosts" class="col m-2">Previous page</button>
+        <h1 id="pageNumber" class="col"></h1>
+        <button id="nextPosts" class="col m-2">Next page</button>
+      </div>
     </main>
 
     <footer class="fixed-bottom bg-light">

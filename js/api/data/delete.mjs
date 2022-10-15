@@ -14,6 +14,6 @@ export async function removePost(id) {
   const response = await authFetch(deletePostURL, {
     method,
   });
-
+  location.reload();
   return await response.json();
 }

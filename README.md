@@ -10,9 +10,8 @@ Login
 User Profile and post feed fetch
 logout
 delete post
+edit Post
+sort feed
 
 todo:
 search
-sort
-filter
-edit post
