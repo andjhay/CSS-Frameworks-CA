@@ -28,30 +28,32 @@ export async function multiPostFetch() {
         event.preventDefault();
         const form = event.target;
         const formData = new FormData(form);
-        const searchTerm = Object.fromEntries(formData.entries());
-        console.log(searchTerm.search);
-        console.log(loadEntirePostLibrary(searchTerm));
+        const searchTerm = Object.fromEntries(formData.entries()).search;
+        console.log(searchTerm);
+        loadEntirePostLibrary(searchTerm.toLowerCase());
       });
-
-      async function loadEntirePostLibrary(searchTerm) {
-        let limit = 10;
-        let sort = "";
-        let offset = 0;
-        const posts = await fetchAllData(apiPath, apiPosts, limit, sort, offset);
-        console.log(posts);
-        function search(searchTerm, posts) {
-          posts.forEach((post) => {
-            console.log(post.title.search(searchTerm))
-            if (post.title.search(searchTerm) != -1 || post.body.search(searchTerm) != -1) {
-              console.log(post);
-              return post;
-            }
-          });
-        }
-        var array = search(searchTerm, posts);
-        console.log(array);
-      }
     }
+  }
+
+  async function loadEntirePostLibrary(searchTerm) {
+    let limit = 3000;
+    let sort = "";
+    let offset = 0;
+    const posts = await fetchAllData(apiPath, apiPosts, limit, sort, offset);
+    console.log(posts);
+    const searchedPosts = posts.filter((post) => {
+      if (
+        post.title.toLowerCase().includes(searchTerm) == true ||
+        post.body.toLowerCase().includes(searchTerm) == true ||
+        post.author.name.toLowerCase().includes(searchTerm) == true ||
+        post.id == Number(searchTerm)
+      ) {
+        return true;
+      }
+    });
+    container.innerHTML = "";
+    renderPostTemplates(searchedPosts, container);
+    console.log(searchedPosts);
   }
 
   Search();
@@ -80,7 +82,7 @@ export async function multiPostFetch() {
     let currentPage = Number(load("currentPage"));
     displayPage.innerHTML = currentPage;
     container.innerHTML = "";
-    loadPosts(currentSort, offset);
+    loadPosts(limit, currentSort, offset);
   });
 
   sortNew.addEventListener("click", (event) => {
@@ -89,13 +91,14 @@ export async function multiPostFetch() {
 
   previousButton.addEventListener("click", (event) => {
     if (offset != 0) offset = offset - 10;
+    console.log(offset);
     let currentPage = Number(load("currentPage"));
-    currentPage = currentPage - 1;
+    if (currentPage != 1) currentPage = currentPage - 1;
     save("currentPage", currentPage);
     displayPage.innerHTML = currentPage;
     container.innerHTML = "";
     const currentSort = load("currentSort");
-    loadPosts(currentSort, offset);
+    loadPosts(limit, currentSort, offset);
   });
   nextButton.addEventListener("click", (event) => {
     offset = offset + 10;
@@ -105,7 +108,7 @@ export async function multiPostFetch() {
     displayPage.innerHTML = currentPage;
     container.innerHTML = "";
     const currentSort = load("currentSort");
-    loadPosts(currentSort, offset);
+    loadPosts(limit, currentSort, offset);
   });
 }
 

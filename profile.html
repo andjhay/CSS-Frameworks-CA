@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social Noroff</title>
-    <link rel="stylesheet" href="../dist/css/style.css" />
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/main_pages/main.mjs" defer type="module"></script>
-    <script src="../js/main_pages/friendProfile.mjs" defer type="module"></script>    
+    <link rel="stylesheet" href="dist/css/style.css" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main_pages/main.mjs" defer type="module"></script>
+    <script src="js/main_pages/profiles.mjs" defer type="module"></script>    
   </head>
 
   <body class="overflow-scroll">
@@ -37,7 +37,7 @@
             <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg">
               <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
                 <p>
-                  <ul>Details
+                  <ul>Profile Details
                     <li>About</li>
                     <li>Likes</li>
                     <li>Dislikes</li>
@@ -56,6 +56,40 @@
       <div class="container px-4 py-5" id="displayPosts">
         <h2 class="pb-2 border-bottom">Users Posts</h2>
 
+        </div>
+      </div>
+
+      <div class="container px-4 py-5 mb-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom">New Post</h2>
+        <div class="row row-cols-1 row-cols-lg-2 align-items-stretch py-5">
+
+          <div class="form w-50 m-auto">
+          <form id="postForm">
+  
+            <div class="form-floating">
+              <input type="text" class="form-control top" name="title" id="title" placeholder="Title" required/>
+              <label for="title">Title (required)</label>
+            </div>
+  
+            
+            <div class="form-floating">
+              <textarea type="text" class="form-control mid" name="body" id="body" placeholder="Text" required></textarea>
+              <label for="body">Text (required) </label>
+            </div>
+
+            <div class="form-floating">
+              <input type="url" class="form-control mid" name="media" id="media" placeholder="Media (URL)" required ></input>
+              <label for="media">Media (URL) </label>
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="form-control bottom" name="tags" id="tags" placeholder="Tags"/>
+              <label for="tags">Tags</label>
+            </div>
+  
+            <button class="w-100 btn btn-lg btn-primary">Post</button>
+          </form>
+          </div>
         </div>
       </div>
 

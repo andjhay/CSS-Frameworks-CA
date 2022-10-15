@@ -2,7 +2,7 @@ import { apiPath } from "../api/api.mjs";
 import { fetchData } from "../api/data/fetch.mjs";
 import { updatePost } from "../api/data/update.mjs";
 
-const apiPosts = "/posts/";
+const apiPosts = "/posts";
 
 async function setUpdatePostListener() {
   const form = document.querySelector("#updateForm");
