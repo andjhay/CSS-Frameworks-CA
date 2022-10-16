@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Noroff</title>
+    <link rel="stylesheet" href="dist/css/style.css" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main_pages/main.mjs" defer type="module"></script>
+    <script src="js/main_pages/profiles.mjs" defer type="module"></script>    
+  </head>
+
+  <body class="overflow-scroll">
+    <header class="d-flex p-3 bg-light">
+      <h1 class="w-25">Social Noroff</h1>
+      <ul class="nav nav-pills justify-content-center align-items-center w-50">
+        <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="profile.html" class="nav-link active m-2">Profile</a></li>
+      </ul>
+      <div class="w-25 justify-content-center align-items-center d-flex">
+        <p id="currentUser" class="text-end m-auto"></p>
+        <button id="logOutButton" class="btn btn-primary m-2">Log Out</button>
+      </div>
+    </header>
+
+    <main class="text-center">
+      <div class="container px-4 py-5">
+        <h2 id="userName" class="pb-2 border-bottom">Profile: </h2>
+        <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
+          
+          <div id="profilePictureDiv" class="col">
+            <img id="profilePicture" class="img-fluid rounded-4" src="" alt="" width="200" height="200">
+          </div>
+
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg">
+              <div id="userDetails" class="text-start h-100 p-5 pb-3">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="listFollowers" class="row w-75 px-4 py-5 m-auto">
+        <h2 class="pb-2 border-bottom">Followers</h2>
+      </div>
+
+      <div id="listFollowing" class="row w-75 px-4 py-5 m-auto">
+        <h2 class="pb-2 border-bottom">Following</h2>
+      </div>
+
+      <div class="container px-4 py-5" id="displayPosts">
+        <h2 class="pb-2 border-bottom">Users Posts</h2>
+
+        </div>
+      </div>
+
+      <div class="container px-4 py-5 mb-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom">New Post</h2>
+        <div class="row row-cols-1 row-cols-lg-2 align-items-stretch py-5">
+
+          <div class="form w-50 m-auto">
+          <form id="postForm">
+  
+            <div class="form-floating">
+              <input type="text" class="form-control top" name="title" id="title" placeholder="Title" required/>
+              <label for="title">Title (required)</label>
+            </div>
+  
+            
+            <div class="form-floating">
+              <textarea type="text" class="form-control mid" name="body" id="body" placeholder="Text" required></textarea>
+              <label for="body">Text (required) </label>
+            </div>
+
+            <div class="form-floating">
+              <input type="url" class="form-control mid" name="media" id="media" placeholder="Media (URL)"></input>
+              <label for="media">Media (URL) </label>
+            </div>
+
+            <div class="form-floating">
+              <input type="text" class="form-control bottom" name="tags" id="tags" placeholder="Tags"/>
+              <label for="tags">Tags</label>
+            </div>
+  
+            <button class="w-100 btn btn-lg btn-primary">Post</button>
+          </form>
+          </div>
+        </div>
+      </div>
+
+      
+    </main>
+
+    <footer class="fixed-bottom bg-light">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="profile.html" class="nav-link px-2 text-muted">Profile</a></li>
+        <li class="nav-item"><a href="login.html" class="nav-link px-2 text-muted">Login</a></li>
+        <li class="nav-item"><a href="register.html" class="nav-link px-2 text-muted">Register</a></li>
+      </ul>
+      <p class="text-center text-muted">© 2022 Social Noroff</p>
+    </footer>
+  </body>
+</html>

@@ -4,18 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Social Noroff - Home</title>
+    <title>Social Noroff</title>
     <link rel="stylesheet" href="dist/css/style.css" />
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main_pages/main.mjs" defer type="module"></script>
+    <script src="js/handlers/viewPost.mjs" defer type="module"></script>    
   </head>
 
   <body class="overflow-scroll">
     <header class="d-flex p-3 bg-light">
       <h1 class="w-25">Social Noroff</h1>
       <ul class="nav nav-pills justify-content-center align-items-center w-50">
-        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="profile.html" class="nav-link m-2">Profile</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="profile.html" class="nav-link active m-2">Profile</a></li>
       </ul>
       <div class="w-25 justify-content-center align-items-center d-flex">
         <p id="currentUser" class="text-end m-auto"></p>
@@ -23,27 +24,15 @@
       </div>
     </header>
 
-    <main class="text-center mb-5 pb-5">
-      <div class="justify-content-center m-2">
-        <h2 class="m-3 border-bottom">Postfeed</h2>
-      </div>
-      <div class="justify-content-center m-auto w-50">
-        <form id="search" class="m-3">
-          <input class="form-control" type="search" name="search" placeholder="Search" />
-          <button type="submit" id="search" class="m-2">search</button>
-        </form>
-      </div>
-      <div class="w-50 m-auto">
-        <div class="m-2">
-          <button id="sortNew" class="m-2">Newest</button><button id="sortOld" class="m-2">Oldest</button>
+    <main class="text-center">
+
+      <div class="container px-4 py-5" id="displayPosts">
+        <h2 class="pb-2 border-bottom">Post</h2>
+
         </div>
       </div>
-      <div id="posts" class="container"></div>
-      <div class="row mb-5 p-3 w-50 m-auto">
-        <button id="previousPosts" class="col m-2">Previous page</button>
-        <h1 id="pageNumber" class="col"></h1>
-        <button id="nextPosts" class="col m-2">Next page</button>
-      </div>
+
+      
     </main>
 
     <footer class="fixed-bottom bg-light">
