@@ -19,7 +19,7 @@
       </ul>
       <div class="w-25 justify-content-center align-items-center d-flex">
         <p id="currentUser" class="text-end m-auto"></p>
-        <button id="logOut" class="btn btn-primary m-2">Log Out</button>
+        <button id="logOutButton" class="btn btn-primary m-2">Log Out</button>
       </div>
     </header>
 
@@ -38,7 +38,7 @@
               pattern="^[\w]+$"
               title="Name must only include upper and lowercase letters example: John Smith"
             />
-            <label for="name">Name</label>
+            <label for="name">Name (required)</label>
           </div>
           <div class="form-floating">
             <input
@@ -51,7 +51,7 @@
               pattern="^[\w\-.]+@(stud.)?noroff.no$"
               title="Email must be a @noroff.no or @stud.noroff.no address"
             />
-            <label for="email">Email address</label>
+            <label for="email">Email address (required)</label>
           </div>
           <div class="form-floating">
             <input
@@ -64,7 +64,7 @@
               minlength="8"
               title="Must be at least 8 characters long"
             />
-            <label for="password">Password</label>
+            <label for="password">Password (required)</label>
           </div>
           <div class="form-floating">
             <input

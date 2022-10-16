@@ -17,8 +17,13 @@ export async function multiPostFetch() {
   const previousButton = document.querySelector("#previousPosts");
   const nextButton = document.querySelector("#nextPosts");
   const displayPage = document.querySelector("#pageNumber");
-  const search = document.querySelector("#searchButton");
   const container = document.querySelector("#posts");
+
+  /**
+   * Searches the entire api for posts
+   * by searchTerm
+   * text or post ID
+   */
 
   function Search() {
     const form = document.querySelector("#search");
@@ -35,12 +40,16 @@ export async function multiPostFetch() {
     }
   }
 
+  /**
+   * Loads all api posts (total is custom set) then returns only objects in array that match the search input
+   * @param {string} searchTerm the input from search field
+   */
+
   async function loadEntirePostLibrary(searchTerm) {
     let limit = 3000;
     let sort = "";
     let offset = 0;
     const posts = await fetchAllData(apiPath, apiPosts, limit, sort, offset);
-    console.log(posts);
     const searchedPosts = posts.filter((post) => {
       if (
         post.title.toLowerCase().includes(searchTerm) == true ||
@@ -53,7 +62,6 @@ export async function multiPostFetch() {
     });
     container.innerHTML = "";
     renderPostTemplates(searchedPosts, container);
-    console.log(searchedPosts);
   }
 
   Search();
@@ -63,6 +71,13 @@ export async function multiPostFetch() {
   save("currentSort", "");
   const currentSort = load("currentSort");
   let limit = 10;
+
+  /**
+   * Loads posts to page
+   * @param {number} limit how many posts to load
+   * @param {string} sort query string to tell api how to return array
+   * @param {number} offset number tells the api how many post from the first in the array to return, used to cycle through page by page
+   */
 
   async function loadPosts(limit, sort, offset) {
     const posts = await fetchAllData(apiPath, apiPosts, limit, sort, offset);
@@ -86,7 +101,14 @@ export async function multiPostFetch() {
   });
 
   sortNew.addEventListener("click", (event) => {
-    location.reload();
+    save("currentSort", "&sort=created&sortOrder=desc");
+    const currentSort = load("currentSort");
+    const offset = 0;
+    save("currentPage", "1");
+    let currentPage = Number(load("currentPage"));
+    displayPage.innerHTML = currentPage;
+    container.innerHTML = "";
+    loadPosts(limit, currentSort, offset);
   });
 
   previousButton.addEventListener("click", (event) => {

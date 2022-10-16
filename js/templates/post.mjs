@@ -11,10 +11,10 @@ export function postTemplateFeed(postData) {
     postData.created.slice(11, 19)
   }`;
   const post = document.createElement("div");
-  post.classList.add("row", "border", "m-2", "p-3");
-  post.innerHTML = `<div class="col"> <img src="${postData.media}" height="100"> </div> 
-  <div class="col"> <h2>${postData.title}</h2> <a href="friend.html?name=${postData.author.name}"><h6>${postData.author.name}</h6></a> <h8>${date}</h8> <p>${postData.body}</p> </div>
-  <div> <a href="post.html?id=${postData.id}&author=${postData.author.name}"> <button class="btn btn-secondary m-2"> View Post </button></a> </div> `;
+  post.classList.add("row", "border", "rounded-4", "shadow-lg", "m-2", "p-3");
+  post.innerHTML = `<div class="col"> <img class="img-fluid rounded-4" src="${postData.media}" height="100"> </div> 
+  <div class="col card rounded-4 shadow-lg text-start"> <h2>${postData.title}</h2> <a href="friend.html?name=${postData.author.name}"><h6>${postData.author.name}</h6></a> <p>${date}</p> <p>${postData.body}</p> </div>
+  <div class="text-end"> <a href="post.html?id=${postData.id}&author=${postData.author.name}"> <button class="btn btn-secondary mt-4"> View Post </button></a> </div> `;
   return post;
 }
 
@@ -29,10 +29,10 @@ export function postTemplateUser(postData) {
     postData.created.slice(11, 19)
   }`;
   const post = document.createElement("div");
-  post.classList.add("row", "border", "m-2", "p-3");
-  post.innerHTML = `<div class="col"> <img src="${postData.media}" height="100"> </div> 
-  <div class="col"> <h2>${postData.title}</h2> <h5>${date}</h5> <p>${postData.body}</p> </div> 
-  <div class="row m-auto">
+  post.classList.add("row", "border", "rounded-4", "shadow-lg", "m-2", "p-3");
+  post.innerHTML = `<div class="col"> <img class="img-fluid rounded-4 shadow-lg" src="${postData.media}" height="100"> </div> 
+  <div class="col card rounded-4 shadow-lg text-start"> <h2>${postData.title}</h2> <p>${date}</p> <p>${postData.body}</p> </div> 
+  <div class="row">
   <button id="deleteButton" data-id="${postData.id}" class="btn btn-primary col m-2"> Delete </button> <a class="col" href="edit.html?id=${postData.id}"> <button class="btn btn-secondary w-100 m-2"> Edit </button></a>
   </div>
   `;
@@ -50,13 +50,9 @@ export function postTemplateUserNoButton(postData, author) {
     postData.created.slice(11, 19)
   }`;
   const post = document.createElement("div");
-  post.classList.add("row", "border", "m-2", "p-3");
-  post.innerHTML = `<div class="col"> <img src="${postData.media}" height="100"> </div> 
-  <div class="col"> <h2>${postData.title}</h2> <a href="friend.html?name=${author}"><h6>${author}</h6></a> <h5>${postData.created}</h5> <p>${postData.body}</p> </div> 
-  <div class="row m-auto">
-  <div> ${postData.comments} </div>
-  
-  `;
+  post.classList.add("row", "border", "rounded-4", "shadow-lg", "m-2", "p-3");
+  post.innerHTML = `<div class="col"> <img class="img-fluid rounded-4" src="${postData.media}" height="100"> </div> 
+  <div class="col card rounded-4 shadow-lg text-start"> <h2>${postData.title}</h2> <a href="friend.html?name=${author}"><h6>${author}</h6></a> <p>${date}</p> <p>${postData.body}</p> </div> `;
   return post;
 }
 
@@ -71,10 +67,10 @@ export function postTemplateOtherUsers(postData, author) {
     postData.created.slice(11, 19)
   }`;
   const post = document.createElement("div");
-  post.classList.add("row", "border", "m-2", "p-3");
-  post.innerHTML = `<div class="col"> <img src="${postData.media}" height="100"> </div> 
-  <div class="col"> <h2>${postData.title}</h2> <h5>${date}</h5> <p>${postData.body}</p> </div> 
-  <div> <a href="post.html?id=${postData.id}&author=${author}"> <button class="btn btn-secondary m-2"> View Post </button></a> </div> `;
+  post.classList.add("row", "border", "rounded-4", "shadow-lg", "m-4", "p-3");
+  post.innerHTML = `<div class="col"> <img class="img-fluid rounded-4" src="${postData.media}" height="100"> </div> 
+  <div class="col card rounded-4 shadow-lg text-start"> <h2>${postData.title}</h2> <p>${date}</p> <p>${postData.body}</p> </div> 
+  <div class="text-end"> <a href="post.html?id=${postData.id}&author=${author}"> <button class="btn btn-secondary m-2"> View Post </button></a> </div> `;
   return post;
 }
 

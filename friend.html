@@ -20,7 +20,7 @@
       </ul>
       <div class="w-25 justify-content-center align-items-center d-flex">
         <p id="currentUser" class="text-end m-auto"></p>
-        <button id="logOut" class="btn btn-primary m-2">Log Out</button>
+        <button id="logOutButton" class="btn btn-primary m-2">Log Out</button>
       </div>
     </header>
 
@@ -30,27 +30,25 @@
         <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
           
           <div id="profilePictureDiv" class="col">
-            <img id="profilePicture" src="" alt="" width="200" height="200">
+            <img id="profilePicture" class="img-fluid rounded-4" src="" alt="" width="200" height="200">
           </div>
 
           <div class="col">
             <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                <p>
-                  <ul>Details
-                    <li>About</li>
-                    <li>Likes</li>
-                    <li>Dislikes</li>
-                  </ul>
-                </p>
+              <div id="userDetails" class="text-start h-100 p-5 pb-3">
+                
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="container px-4 py-5">
+      <div id="listFollowers" class="row w-75 px-4 py-5 m-auto">
         <h2 class="pb-2 border-bottom">Followers</h2>
+      </div>
+
+      <div id="listFollowing" class="row w-75 px-4 py-5 m-auto">
+        <h2 class="pb-2 border-bottom">Following</h2>
       </div>
 
       <div class="container mb-5 px-4 py-5" id="displayPosts">

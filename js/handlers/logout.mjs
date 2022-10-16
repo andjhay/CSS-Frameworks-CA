@@ -1,10 +1,18 @@
 import * as storage from "./storage.mjs";
 
-export function logOut() {
-  const logOut = document.querySelector("#logOut");
+/**
+ * Logs user out, clearing auth token and user data from local storage when user presses button.
+ */
 
-  if (logOut) {
-    logOut.addEventListener("click", (event) => {
+export function logOut() {
+  const logOutButton = document.querySelector("#logOutButton");
+
+  if (logOutButton.innerHTML === String("Log In")) {
+    logOutButton.addEventListener("click", (event) => {
+      window.location.href = "login.html";
+    });
+  } else {
+    logOutButton.addEventListener("click", (event) => {
       storage.remove("token");
       storage.remove("user");
       location.reload();

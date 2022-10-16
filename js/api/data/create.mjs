@@ -6,7 +6,9 @@ const method = "post";
 
 export async function createPost(postData) {
   const createPostURL = apiPath + action;
-
+  if (postData.media === "") {
+    delete postData.media;
+  }
   const response = await authFetch(createPostURL, {
     method,
     body: JSON.stringify(postData),
